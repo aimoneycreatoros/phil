@@ -7094,3 +7094,33 @@ not from the veto. The superseding drift-plus-futures row (0.76 vs 0.74)
 beat the mid by 0.010. It is still the single September up-trend regime, so
 the October split-by-trend re-grade stands. Full grading in
 RETRO-20260929-2215.
+
+## 2026-09-29 23:42Z update: one `outside-view-veto` row settled (Trump renames AI, 3-snapshot chain) — unexplained-move tracking, n=2
+
+| Trump renames AI (`e22fb0445ebe`, OVV, supersedes `f85a9b197bc6`) | 0.30 / 0.535 | No | +0.23 | Yes | **-5.00** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 181 rows, 173 trd, 8 refused, 73W/100L, +$74.87 (was
++$79.87; 79.87-5.00=74.87 ✓), dBrier +0.0336 (was +0.0322). Side: no
+128/120trd/55W-65L/+$40.67 (was 127/119/55W-64L/+$45.67; 45.67-5.00=40.67
+✓); yes 53/53/18W-35L/+$34.20 (unchanged). Check 40.67+34.20=74.87 ✓.
+Ruling: no boundary change — the declined No bet would have lost, so the
+veto did its job on the trade decision.
+
+**Unexplained-move tracking (paired with the 2026-09-21 Opus case,
+RETRO-20260922-0619): 1-for-2 so far, not a rule either way.** This
+market's book moved 0.255->0.535 between Sep27 and Sep29 with, per the
+row's note, "no source I can find." Per the Sep21 lesson ("a price move
+with no sourced cause is not itself evidence") the estimate was NOT
+revised toward the market (held at 0.30 vs market 0.535) and the bet was
+vetoed. This time the market was right — event resolved Yes, own's
+whitehouse.gov/presidential-actions search method never surfaced whatever
+the book saw. Sep21's case had the opposite result: an unsourced jump
+that reversed, where discounting it was correct. Two data points, one
+each way, on the specific question "should an unexplained price move
+against a public-record-search estimate shift the estimate itself
+(separately from whether it should ever be traded)." Full grading in
+RETRO-20260929-2342. Stays a tracked observation, not a playbook rule —
+n=2 is far below the ~15-settlement floor CYCLE.md sets for acting on a
+read, and the two cases are in different categories (ai-model-release vs
+news). Re-visit if a third instance settles either way.
