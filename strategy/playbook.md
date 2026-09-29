@@ -7079,3 +7079,18 @@ self-built Bo3 model. Full grading in RETRO-20260929-1800.
   A ladder with no row near the outcome can't be graded as a
   distribution. This is the validated-feed sweep rule ("forecasts for
   every leg read") applied to BLS/BEA/StatCan ladders.
+
+## 2026-09-29 22:15Z update: one `wide-spread-veto` row settled (10y hit 5.25% Sep)
+
+| 10y hit 5.25% Sep (`a41e6e996b85`, WSV, superseded by `5e46d21ef6ca`) | 0.46 / 0.65 | No | fillable per ledger | Yes | −5.00 |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+wide-spread-veto`): 28 rows, 25 trd, 3 refused, 14W/11L, −$29.35 (was
+−$24.35; −24.35−5.00=−29.35 ✓), dBrier −0.0299. Side: no 16/14/6W-8L/
+−$27.84 (was 15/13/6W-7L/−$22.84; −22.84−5.00 ✓); yes 12/11/8W-3L/−$1.50
+(unchanged). Check −27.84−1.50=−29.34 ≈ −29.35 (rounding) ✓. Ruling: no
+boundary change. The loss comes from the pre-drift-rule driftless blend (Sep 25),
+not from the veto. The superseding drift-plus-futures row (0.76 vs 0.74)
+beat the mid by 0.010. It is still the single September up-trend regime, so
+the October split-by-trend re-grade stands. Full grading in
+RETRO-20260929-2215.
