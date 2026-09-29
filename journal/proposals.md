@@ -3623,3 +3623,9 @@ Full detail in journal/retros/DEEP-2026-09-29.md.
 **Status:** relaxation fork NOT MET (14th). 1 bet settled (quake WON
 +0.62), 3 placed (Parcl trio), 7 open. No reverts; validated-feed sweep
 and first-contact family cap added.
+
+## 2026-09-29 05:1xZ - mech step: undelivered off-chain send, then wire-nonce 401 x2 (evidence for the open EOA-gas and wire-nonce items)
+
+- Off-chain R1 market-aware request phil-20260929-0512-airename-r1aware (mech id 2357e3b9...011d, service 21) was accepted, then not delivered in the 300s wait or one 240s mech_result poll.
+- The next two sequential off-chain sends on service 21 got HTTP 401 "wire nonce below sender's next expected slot". The undelivered request may hold the slot.
+- The legacy_on_chain fallback was not tried: the agent EOA was last logged at 0.1404 POL against ~0.13-0.16 POL per tx. Operator act still open: send ~0.5 POL to the agent EOA, and check whether the undelivered request was paid.
