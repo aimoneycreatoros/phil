@@ -6987,3 +6987,61 @@ variance, so the family goes forecast-only. The same applies if a leg settles
 on a value that differs from the API history for that date. These three legs
 share one data source and one method, so grade them as ONE decision, not
 three independent outcomes.
+
+## DEEP-2026-09-29 rulings
+
+- **AI release-date anchoring rule (abb6dcc): KEPT.** The "7 of 7" count
+  covers about 3 markets, not 7: 298455f0923c was superseded by
+  b5144f22aaaa, and the four Opus rows cover two or three rungs of one
+  launch. So the effective evidence is about **2 launch events** (Opus
+  and Sonnet 5.5), and both came earlier than the leak-based lean said.
+  I still keep the rule. The category-level number stands on its own
+  (ai-model-release forecasts n=35, dBrier +0.0838). The rule only moves
+  est_prob to the mid, and it keeps the lean in the note, so its
+  downside is capped at "no information added". Re-grade the shade
+  views at n=8 **distinct markets**, not n=8 rows.
+- **Treasury touch drift rule (4fb1a1d): KEPT, SHARPENED.** The "5 of 5"
+  is also rows, not markets. fdedb184ad3e -> 8b9d86b667bb ->
+  3ed526b57eca is one 10y 5.20% market re-recorded three times, so the
+  evidence is **3 markets** (30y 5.39%, 10y 5.20%, 30y 5.55%) plus one
+  raw-bootstrap win (99df204b7f85), all from a single September ladder
+  in which yields trended up. "Drift kept" beats "driftless" exactly
+  when the trend continues, so this is one regime, not a method proof.
+  The rule stays because it only governs what goes into a forecast-only
+  row. At the October ladder re-grade, split the grading by whether the
+  month trended. If a flat or reversing month shows the raw-drift est
+  losing to the mid, revert to the mid (not to driftless).
+- **NEW: feed-backed families get a mechanical look that does not
+  depend on screener divergence (sensing).** The Parcl home-value
+  family was in the scan pool and screened **362 times over 14 days
+  (Sep 16-29)**. Every row had divergence 0.0, confidence `low`, and a
+  reason like "Need current Parcl Labs home value data". The screener
+  prompt says to do exactly that (it cannot browse), and escalation
+  ranks by divergence, so a family whose answer is one keyless API call
+  away could never reach research. One direct lookup (00:3xZ Sep 29)
+  produced 3 floor-clearing bets. Since Sep 22, 6,344 of 16,800
+  screened rows (38%) are this "no data, echo the mid" shape, mostly
+  crypto/Treasury/WTI rungs that already have methods. Rule: keep a
+  short list of **validated-feed families**, meaning the resolver's
+  source is readable keyless and a past resolution was matched against
+  it. Each FULL cycle checks ONE family from the list outside the 15
+  escalation slots, rotating, and records forecasts for every leg read.
+  The initial list is Parcl home-value (4/4 NYC resolutions matched)
+  and USGS M5.5+ weekly counts (aea0ebb45997 won on the count). A
+  family is added only after a resolution-match check. **Retire the
+  sweep** if 7 days of rotation produce no leg with ask-edge >= min_edge
+  outside the Parcl set. This rule is about sensing only. It grants no
+  betting permission beyond the existing floors and family rules.
+- **NEW: first-contact family stake cap (discipline).** Until a new
+  benchmark family has its first settlement, the TOTAL open stake across
+  that family is capped at max_stake_per_event_usd ($10), even when the
+  legs are nominally different events. The 09-29 Parcl trio (3c4304fb1d0a,
+  95624b8c75a0, 22456f76e62d, $15 total) complied with every written
+  floor. The playbook itself says to grade them as ONE decision, though,
+  because the resolver-equals-API assumption is shared, and a $15
+  single-thesis exposure is above what the per-event cap exists to
+  enforce. The precedent is the Lake America pair (bbe450e04eb9 +
+  6f7dfb5b7c0c), one shared thesis at -$10, which the cap contained.
+  This is not a violation on record, since no written rule was broken.
+  It applies from now on, including to the October Parcl set if the
+  09-30 grade passes.

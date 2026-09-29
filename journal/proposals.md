@@ -3598,3 +3598,28 @@ schedule.json.
   Safe transaction. Fix: send at least ~0.5 POL to the agent EOA (a few
   deposits' worth), or pre-fund the mech prepaid balance from the safe.
   Status: PROPOSED (operator act). R1 sample missed 6 days running.
+
+## DEEP-2026-09-29 status pass
+
+Full detail in journal/retros/DEEP-2026-09-29.md.
+
+- **2026-09-28 12:2xZ mech gas → agent EOA:** ENDORSED. Last
+  mech-requests row: "safe holds 15 POL but EOA pays gas (0.1404 POL, tx
+  ~0.159)". Operator act: send ~0.5 POL to the agent EOA. R1 sample
+  missed 7 days. Status: ENDORSED (operator act).
+- **NEW (operator, core/screen.py, conditional):** reserve 1-2 escalation
+  slots per FULL for high-liquidity divergence-0 `low` rows whose reason
+  names a specific missing data source. The Parcl family was screened
+  362x over 14 days, always "need data", and never escalated; 38% of
+  screened rows since Sep 22 have this shape. The agent-side rotating
+  validated-feed sweep (playbook) is tested first. Status: PROPOSED
+  (operator), conditional on the 2026-10-06 sweep retirement test.
+- Carried unchanged: refusal-row dBrier column, funnel-weld CI check,
+  ODDS_API_KEY on both runners, screener quota vs two runners, per-fold
+  dBrier column, real-twin allowed-classes, settled_ts determinism,
+  wire-nonce 401, mech delivery-size, lease writability, screener quota
+  refund, watch.py shape regexes, subclass auto-tagger.
+
+**Status:** relaxation fork NOT MET (14th). 1 bet settled (quake WON
++0.62), 3 placed (Parcl trio), 7 open. No reverts; validated-feed sweep
+and first-contact family cap added.
