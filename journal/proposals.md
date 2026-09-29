@@ -3629,3 +3629,9 @@ and first-contact family cap added.
 - Off-chain R1 market-aware request phil-20260929-0512-airename-r1aware (mech id 2357e3b9...011d, service 21) was accepted, then not delivered in the 300s wait or one 240s mech_result poll.
 - The next two sequential off-chain sends on service 21 got HTTP 401 "wire nonce below sender's next expected slot". The undelivered request may hold the slot.
 - The legacy_on_chain fallback was not tried: the agent EOA was last logged at 0.1404 POL against ~0.13-0.16 POL per tx. Operator act still open: send ~0.5 POL to the agent EOA, and check whether the undelivered request was paid.
+
+## 2026-09-29 18:0xZ - LIGHT ticks defer forecast-settlement grading: CYCLE.md step 3 and the LIGHT definition read as permitting it
+
+- Evidence: two cloud LIGHT ticks today settled rows and deferred grading to "the next FULL cycle". At 14:55Z it was the Canada GDP bet 05333272be9d, graded 70 minutes late in RETRO-20260929-1545. At 16:15Z it was 5 JOLTS forecasts, graded about 2h late in RETRO-20260929-1800. Earlier instances are on record: DEEP-2026-08-05 (b21e42c123a1, 23h late) and DEEP-2026-09-02 (2 forecasts, 19h late).
+- Cause: CYCLE.md step 3 says "only if new positions settled", which reads as ledger-only. The LIGHT tick definition says "step 1 and the open-position monitor only". The agent-side rule that overrides both lives in the schedule.json `_comment`, a 69KB file, and gets missed.
+- Ask (operator text): (a) step 3: "only if new positions OR forecasts settled since the last retro"; (b) LIGHT definition: "step 1, step 3 if step 1 settled anything, and the open-position monitor".

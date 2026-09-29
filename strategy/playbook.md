@@ -7053,3 +7053,29 @@ three independent outcomes.
   benchmark for StatCan monthly GDP brackets. Any directional tilt layered
   on top (the Jul "tilt up" from the wholesale revision) is unvalidated:
   cap it at 0.05 of bracket mass until it has its own graded evidence.
+
+## 2026-09-29 18:00Z update: JOLTS Aug ladder + one `outside-view-veto` row settled
+
+| LGD -1.5 vs Xtreme (`c0ad4f0ec92d`, OVV) | 0.25 / 0.355 | No | +0.105 | No | **+2.46** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 180 rows, 172 trd, 8 refused, 73W/99L, +$79.87 (was
++$77.41; 77.41+2.46=79.87 ✓), dBrier +0.0322. Side: no 127/119/55W-64L/
++$45.67 (43.21+2.46 ✓); yes 53/53/18W-35L/+$34.20 (unchanged). Check
+45.67+34.20=79.87 ✓. Ruling: no boundary change. It is one draw on a
+self-built Bo3 model. Full grading in RETRO-20260929-1800.
+
+- **JOLTS: record the LinkUp model centre and do not tilt past consensus
+  on soft signals (n=1, RETRO-20260929-1800).** Aug print 7,079k vs
+  consensus 7.23M, LinkUp 7.185M. I tilted the centre UP to 7.25M on an
+  Indeed/NFP read. The five ladder rows netted dBrier +0.0011 (a wash).
+  The same shape showed up in the Canada GDP retro: a directional tilt
+  on top of a sourced benchmark is unvalidated. Cap it at 0.05 of bracket
+  mass there, and at zero past consensus for JOLTS until it has graded
+  evidence.
+- **Econ ladders: record every bracket whose book was read, centre
+  included.** The Aug JOLTS ladder recorded the tails and the upper
+  brackets, but not 7.0-7.1 or 7.1-7.2, and the print landed in 7.0-7.1.
+  A ladder with no row near the outcome can't be graded as a
+  distribution. This is the validated-feed sweep rule ("forecasts for
+  every leg read") applied to BLS/BEA/StatCan ladders.
