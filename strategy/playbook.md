@@ -7045,3 +7045,11 @@ three independent outcomes.
   This is not a violation on record, since no written rule was broken.
   It applies from now on, including to the October Parcl set if the
   09-30 grade passes.
+- **Canada GDP flash->first-print method: first settled validation
+  (RETRO-20260929-1545).** Jul 2026: flash "essentially unchanged",
+  print 0.0%. Bet 05333272be9d (0.0-0.1 Yes, own 0.63 vs ask 0.57) won
+  +$3.77, dBrier -0.048. Both sibling forecasts (<0 at 0.25, 0.2-0.3 at
+  0.11) also beat the mid. Keep the 14-month flash-error table as the
+  benchmark for StatCan monthly GDP brackets. Any directional tilt layered
+  on top (the Jul "tilt up" from the wholesale revision) is unvalidated:
+  cap it at 0.05 of bracket mass until it has its own graded evidence.
