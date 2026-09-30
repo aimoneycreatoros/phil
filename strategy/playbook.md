@@ -4714,6 +4714,37 @@ the outside-view pair is the textbook undated-count case the
 cumulative-count anchor rule exists for (the est rested on an inferred,
 not observed, pace).
 
+**2026-09-30 16:1xZ update (FULL cycle, cloud; Aug Core PCE ladder + Sep
+gas touch + Sep 30 Parcl sets settled: 3 `outside-view-veto` + 4
+`wide-spread-veto` rows, see RETRO-20260930-1615.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Core PCE YoY 3.2% (`9f05a589aba3`, superseded) | 0.49 / 0.31 | Yes | +0.130 | No | -5.00 |
+| Core PCE MoM 0.2% (`275271e3d70b`) | 0.19 / 0.275 | No | +0.080 | Yes | -5.00 |
+| SF home value <1.176M (`7f5d8917f569`) | 0.90 / 0.78 | Yes | +0.110 | Yes | +1.33 |
+| Gas $4.50 High Sep (`27fd401006d8`, wide-spread, superseded) | 0.85 / 0.59 | Yes | -0.040 | No | -5.00 |
+| Gas $4.50 High Sep (`1a0bd265abba`, wide-spread, superseded) | 0.94 / 0.58 | Yes | refused (entry 0.98) | No | - |
+| Gas $4.50 High Sep (`4032a66cd837`, wide-spread) | 0.07 / 0.415 | No | +0.150 | No | +1.41 |
+| SF bracket 1.176M+ (`f9d58ef036d0`, wide-spread) | 0.09 / 0.1795 | No | +0.056 | No | +0.85 |
+
+Outside-view-veto net this batch: **-$8.67** (1W/2L). Mechanical ledger
+(`core/counterfactual.py ledger --skip-reason outside-view-veto`) now: 184
+rows / 176 trades / 126 events / 74W-102L / +$66.20 / dBrier +0.0343 /
+held-out +$60.31. Side split: no 129/121/55W-66L/+$35.67; yes
+55/55/19W-36L/+$30.53. Check: 35.67 + 30.53 = 66.20. (The 2026-09-26
+update read 175 rows; the six rows settled 09-27..09-30 before this batch
+were graded in their own retros and are inside these totals.)
+Wide-spread-veto: **-$2.74** (2W/1L, 1 refused). Ledger now 32 rows / 28
+trades / 16W-12L / -$32.08 / dBrier -0.0033 / held-out -$29.22. Side
+split: no 18/16/8W-8L/-$25.58; yes 14/12/8W-4L/-$6.50. Check: -25.58 +
+-6.50 = -32.08.
+
+Ruling: no boundary change. The PCE pair are econ-print ladder rows where
+the veto saved $10 (the print, 3.0, fell below every camp). The single
+Parcl cost ($1.33) is a validated-feed momentum leg, and it is graded
+under the Parcl section's pre-registered rule, not here.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -6972,6 +7003,19 @@ variance, so the family goes forecast-only. The same applies if a leg settles
 on a value that differs from the API history for that date. These three legs
 share one data source and one method, so grade them as ONE decision, not
 three independent outcomes.
+
+**Graded 2026-09-30 (RETRO-20260930-1615): pre-registered condition MET.**
+All three bets won: NYC, Chicago and LA, +$1.37 total. DC 524K+ Yes and SF
+<1.176M Yes both landed on the momentum side. A re-read of the public
+history at 16:2xZ gives NYC Sep 30 = 679.19 (i.e. $679,190), in the
+settled bracket. That makes the resolver match 5/5 NYC dates. All 12 Parcl
+forecast rows landed on the favoured side, but the realised edge is thin
+(housing-index dBrier -0.010, n=9) because the book already sat at
+0.87-0.97. **Ruling: keep the zero-crossing bet rule and extend it to the
+next monthly set** (Oct 31 brackets), at the same flat $5 and with the
+same momentum legs kept forecast-only. This counts as ONE settled decision
+(n=1 event), not three. A loss on any zero-crossing leg still sends the
+family forecast-only.
 
 ## DEEP-2026-09-29 rulings
 
