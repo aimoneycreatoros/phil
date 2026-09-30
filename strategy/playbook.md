@@ -6223,6 +6223,24 @@ the n>=6 bar is reached. No playbook policy change yet — one game is not
 a sample, but the single data point points toward the right-skew
 overstatement risk being real rather than illustrative.
 
+**Second candidate instance, imported-sigma sub-variant, NOT yet tallied
+(2026-09-30 01:xxZ TRIGGERED cycle):** AL Wild Card Game 2, CWS@HOU, two
+new PM markets (5144942 O/U8.5, 5144941 O/U6.5) fired the watcher on
+creation, starters TBD. Unlike SD@COL, `core/odds.py` returned NO cross-
+book dispersion here — all 8 books quote the identical 7.5 line, power-devig
+consensus P(Over 7.5)=0.504 (spreads <=0.08, essentially fair). With no
+fresh line spread to fit mu/sigma from, sigma=4.39 was imported unchanged
+from the SD@COL fit rather than refit — a weaker instance methodologically
+(external parameter vs in-game data), so it is recorded as forecast-only
+(`090e99f18536` Over8.5 est 0.41, `8f80c89cb1a0` Over6.5 est 0.59 — both
+skip-reason `no-edge`, both edges <=0.04 anyway so the floor alone would
+have blocked a bet regardless of method status) but flagged separately
+rather than folded into the SD@COL n>=6 count. Grade at settlement
+(~2026-09-30 21:00Z) same as SD@COL (direction-of-miss, book-line
+context), and decide then whether tight-single-line + imported-sigma
+belongs in the same tally as multi-line + fitted-sigma, or needs its own
+bar.
+
 ## Mech second opinions: request sequencing and what the pair showed (2026-09-07 08:0xZ)
 
 Two settled instances now show the same off-chain failure shape:
