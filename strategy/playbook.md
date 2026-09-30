@@ -7086,3 +7086,23 @@ three independent outcomes.
   PM led futures to the decision. If a second CB fade of this shape
   loses, make it a rule: cross-market needs a futures read within 72h of
   the decision.
+
+## Validated-feed list addition: IMF PortWatch chokepoint 7-day MA (2026-09-30 12:4xZ, FULL cycle, cloud)
+
+Resolution-match check done, per the DEEP-2026-09-29 sensing rule ("a
+family is added only after a resolution-match check"). The Bab el-Mandeb
+monthly-end bracket sets resolve on PortWatch's trailing 7-day MA of
+`n_total`. The keyless ArcGIS layer `Daily_Chokepoints_Data`
+(services9.arcgis.com/weJ1QsnbMYJlCHdG, `portname like '%Mandeb%'`,
+portid chokepoint4) reproduces both settled sets: Jul 31 MA 29.57 ->
+"28-30" Yes, Aug 31 MA 24.57 -> "<25" Yes. Two findings for pricing:
+brackets are `[lo, next lo)` on the unrounded MA (29.57 sat in "28-30"),
+and publication lags ~3 days (Sep 27 was the latest row on Sep 30), so at
+month-end 4 of the 7 MA days are already known. First read: forecasts
+8ca04df50d34 / ee209d78c082 / 79386cdeeda6, all no-edge (best 0.025 on
+"<25" No). The book put 7.5c on "<25" against 1c on "30-34" while the
+series gave 0/28 3-day windows low enough, so the low side may carry AIS
+information I cannot see. Grade that skew at settlement. The list is now
+Parcl, USGS M5.5+, PortWatch chokepoint MA. Hormuz uses the same layer
+but the zero-transit rows are min-touch on daily counts, not the MA, so
+the match check does not carry over to them.
