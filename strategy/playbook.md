@@ -852,6 +852,26 @@ isn't the favorite, log `benchmark-unreachable` immediately rather than
 spending a devig call on the wrong-side market — the favorite-side
 sibling is where the real (usually null) signal lives.
 
+**Generalization: the invariant is favorite/underdog, not home/away
+(TRIGGERED 2026-09-30 03:38Z, `newmarket:5146462`).** BOS@NYY produced a
+`mlb-...-spread-away-1pt5` market, `Spread: Boston Red Sox (-1.5)` (away
+team as -1.5 favorite side) — a variant this playbook hadn't named
+before (prior instances were always the home-anchored slug). Moneyline
+devig (median 8 books, power) had NYY (home) favored 0.558 vs PM 0.555;
+the away-anchored candidate (BOS -1.5, i.e. BOS winning by 2+) has no
+book equivalent for the same reason a not-favored home spread doesn't —
+sportsbooks quote only the favorite's -1.5 / underdog's +1.5, never the
+reverse, regardless of which side is home. Logged `benchmark-unreachable`
+on 5146462 without spending a devig call on it. The correctly-favorite-
+side sibling this game, `Spread: New York Yankees (-1.5)` (5146421, home
+AND favorite here), devigged clean: PM 0.35 vs sportsbook power-devig
+0.353 — another clean-feed-null. Rule restated to cover both slugs: for
+ANY PM `-1.5` spread market (home- or away-anchored slug alike), check
+the moneyline devig first; if the team named in that specific market is
+NOT the moneyline favorite, log `benchmark-unreachable` immediately —
+only the favorite-side sibling (whichever team, whichever slug) is ever
+directly benchmarkable from `core/odds.py`'s single reported spread line.
+
 **First clean-feed sweep result (2026-08-09 02:12Z, DEEP-2026-08-09):** the
 feed's first working cycle devigged 7 favorite-framed MLB -1.5 spreads and 2
 WNBA markets (2+2 credits, 9 books deep): max nominal edge **0.018** at the
