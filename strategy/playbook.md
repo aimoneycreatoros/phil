@@ -7120,3 +7120,14 @@ information I cannot see. Grade that skew at settlement. The list is now
 Parcl, USGS M5.5+, PortWatch chokepoint MA. Hormuz uses the same layer
 but the zero-transit rows are min-touch on daily counts, not the MA, so
 the match check does not carry over to them.
+
+## Forecast hygiene: supersede the stale sibling in the same cycle (2026-09-30 18:15Z, LIGHT retro)
+
+When research on one market leads me to write that an open forecast on
+another market is "now likely wrong", I record the superseding row on
+that market in the same cycle. The row uses the same category tag and
+states the new estimate. A note on the sibling row does not update the
+measured forecast. Evidence: RETRO-20260930-1815. Xiaomi row
+367d2b7c6fe4 (Sep 27) flagged Alibaba row a733d6439c5a (0.88) as stale.
+No Alibaba row followed, and 0.88 stood for three days until Alibaba
+resolved No.
