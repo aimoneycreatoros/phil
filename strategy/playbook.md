@@ -3169,6 +3169,14 @@ market on decision-weighted Brier. Ruling unchanged: forecast-only
 "indefinitely" stands until a deep retro re-grades against the full
 pre-registered bar, and a reach-only slice never re-opens it.
 
+**2026-10-01 (RETRO-20261001-0625): first far-barrier row settled.**
+`b9687ea473f8` (ETH reach $3k Sep, gap 11.9%, touch.py measured vol 0.467,
+own 0.09 vs mid 0.115) LOST (no touch); own closer, dBrier -0.0051. Far
+split: 1 decision, own closer on 1. On the 2026-09-25 count (4 of 9)
+this makes 5 of 10, but later touch rows (e.g. BTC dip 82.5K
+`c8853475ea55`, DEEP-2026-10-01) were not folded into that count, so the
+next deep retro re-counts from the ledger. Ruling unchanged.
+
 **2026-09-27 18:1xZ (RETRO-20260927-1815): scheduled-close crypto
 strikes/brackets are a SEPARATE family from touch, and my realized-vol
 read has lost all three.** `ed46e73085f3` (BTC $76-78k Sep 12, own 0.53 vs
@@ -4718,6 +4726,33 @@ Ruling: no boundary change. Both vetoes kept real losses off the ledger;
 the outside-view pair is the textbook undated-count case the
 cumulative-count anchor rule exists for (the est rested on an inferred,
 not observed, pace).
+
+**2026-10-01 06:2xZ update (LIGHT tick, cloud; 4 `outside-view-veto` +
+1 `wide-spread-veto` rows settled, see RETRO-20261001-0625.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Saudi E-W pipeline restart Sep30 (`a194b68a39cd`) | 0.85 / 0.67 | Yes | +0.170 | No | -5.00 |
+| AI lab another Millennium Prize Sep30 (`61e11058ff43`) | 0.98 / 0.855 | No | +0.120 | No | +0.81 |
+| OpenAI another Millennium Prize Sep30 (`de704a0f5b47`) | 0.99 / 0.875 | No | +0.110 | No | +0.68 |
+| OpenAI another Millennium Prize re-check (`1e6152a33dff`) | 0.22 / 0.115 | Yes | +0.100 | No | -5.00 |
+| Machado enters Venezuela Sep30 (`53ea2024db78`, wide-spread-veto) | 0.12 / 0.225 | No | +0.070 | No | +1.17 |
+
+Outside-view-veto net this batch: **-$8.51** (2W/2L). Mechanical ledger
+now 193 rows / 185 trades / 134 events / 78W-107L / +$111.48 / dBrier
++0.0327 / held-out +$115.59 (was 189/181/76W-105L/+$119.99/+0.0319). Side
+split: no 133/125/58W-67L/+$98.60 (adds 61e1, de70); yes 60/60/20W-40L/
++$12.88 (adds a194, 1e61). Check: 98.60 + 12.88 = 111.48.
+Wide-spread-veto: **+$1.17** (1W/0L). Ledger now 38 rows / 31 trades /
+18W-13L / -$34.06 / dBrier -0.0056 / held-out -$33.26 (was 37/30/17W-13L/
+-$35.23/-0.0048). Side split: no 22/18/9W-9L/-$29.40 (adds 53ea); yes
+16/13/9W-4L/-$4.66 (unchanged). Check: -29.40 + -4.66 = -34.06.
+
+Ruling: no boundary change. Both Yes-side losses were own-ABOVE-market
+reads on a "will X happen" event that did not (pipeline physically
+restarted but no qualifying official statement; no second Millennium
+claim) - the veto kept both off the ledger. The two No-side wins are
+near-certain-No rows with thin payoff.
 
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
@@ -6757,6 +6792,13 @@ and never qualify.
 **Not covered.** Own-Yes leans in the news cell (n=1, `b21e42c123a1`, a
 different failure), other categories, and mechanical anchors (official
 print, transcript count, cross-market arithmetic).
+
+**Settled tally (RETRO-20261001-0625).** 3 bar-blocked rows settled, CF
+2W/1L, -$1.24 (`core/counterfactual.py ledger --skip-reason
+process-shape-bar`): US-Iran meeting `e36a44d978b6` +$2.35 and Saudi
+pipeline `8e2446683bf4` +$1.41 (own below mid, resolved No, own closer:
+dBrier -0.0605 / -0.0360), Trump renames AI `f85a9b197bc6` -$5.00. Net
+still negative and n=3; no change. Revisit at 10 settled rows.
 
 **Re-open condition.** Rows skipped under this bar are graded as their own
 slice at each deep retro. When 10 have settled, lift the bar if their
