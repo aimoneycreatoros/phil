@@ -6799,6 +6799,9 @@ process-shape-bar`): US-Iran meeting `e36a44d978b6` +$2.35 and Saudi
 pipeline `8e2446683bf4` +$1.41 (own below mid, resolved No, own closer:
 dBrier -0.0605 / -0.0360), Trump renames AI `f85a9b197bc6` -$5.00. Net
 still negative and n=3; no change. Revisit at 10 settled rows.
+Update RETRO-20261001-1015: +1, Russia-Ukraine meeting by Sep30
+`a0a3361a49c1` 0.08 vs 0.13, resolved No, own closer (dBrier -0.0105),
+CF +$0.68. Now 4 settled, CF 3W/1L, -$0.55. No change.
 
 **Re-open condition.** Rows skipped under this bar are graded as their own
 slice at each deep retro. When 10 have settled, lift the bar if their
