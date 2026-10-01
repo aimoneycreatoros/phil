@@ -7211,8 +7211,11 @@ resolved No.
   bet. Any future proposal to validate the touch method must report the
   two sides separately and must not cite the pooled lifetime cell (for
   example commodities-touch -0.034), because the pooled number hides the
-  above-mid losses. The n is small (27 rows off-market). This is a
-  reporting rule, not an edge claim.
+  above-mid losses. The n is small (27 rows off-market).
+  This is a reporting rule, not an edge claim.
+  Tally update RETRO-20261001-0815: +1 below-mid row (STRC cc3d96bd803f
+  -0.0191) and +8 within-0.05 rows (WTI Sep ladder, sum -0.0161). Now
+  below n=10, within n=42, above n=18 (unchanged). Same direction.
 - **Validated-feed sweep, 10-06 retirement test already decided.** The
   test was "retire if no leg outside the Parcl set shows ask-edge >=
   min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
