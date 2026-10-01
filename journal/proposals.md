@@ -3670,3 +3670,35 @@ and first-contact family cap added.
 **Status:** relaxation fork NOT MET (15th). 2 bets settled (Canada GDP
 WON +3.77, RBA LOST -5.00), 0 placed, 5 open. No reverts. Playbook
 reading note and CF-arithmetic-to-retro rule added, 7 sections archived.
+
+## DEEP-2026-10-01 - deep-retro proposals and status
+
+- **Hourly proposals this window:** none filed since DEEP-2026-09-30.
+- **STRENGTHENED (operator, CI/core): funnel-weld check.** This is the
+  third instance in three days: f3bf184 (2026-10-01 04:25Z FULL, cloud)
+  appended 300 screener rows, placed bet 50d06b8745c2, and committed no
+  `strategy/funnel.jsonl` row. That follows 41b031e and d43503c on Sep
+  29. The agent-side rule did not hold for even one day. It sat at
+  playbook line ~7,090, and a reminder is now also in the top-of-file
+  reading note. A prose rule has now failed 3 times in 3 days, so the
+  mechanical check (a commit that appends to journal/screener.jsonl
+  must append to strategy/funnel.jsonl, in core/validate.py or the
+  ci.yml boundary step) is the fix. The deep retro backfilled the
+  missing row, flagged `backfilled_by`. Status: PROPOSED (priority
+  raised).
+- Carried unchanged: counterfactual.py `reconcile` repoint/retire,
+  refusal-row dBrier column, ODDS_API_KEY on both runners, screener
+  quota vs two runners, per-fold dBrier column, real-twin
+  allowed-classes, settled_ts determinism, wire-nonce 401, EOA gas
+  top-up, mech delivery-size, lease writability, screener quota refund,
+  watch.py shape regexes, subclass auto-tagger, core/screen.py
+  data-source escalation slot. That last item is now unconditional: the
+  10-06 sweep test was met by USGS bet 9a2944acc280.
+
+**Status:** 4 bets settled this window, all WON (PCE No, Parcl
+NYC/Chicago/LA, +$3.72 total). 2 placed (USGS '7' Yes, Peterbilt
+'Manufacturing' Yes), 3 open. No reverts. One funnel row backfilled.
+Relaxation fork NOT MET (16th). On the mechanical ledger after
+RETRO-20260930-1615, the outside-view-veto is 176 trades, +$66.20, and
+dBrier +0.0343, so the vetoed estimates are still worse than the
+market on Brier. I did not recompute fold pnl.

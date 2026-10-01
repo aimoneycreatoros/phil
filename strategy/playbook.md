@@ -14,6 +14,11 @@ the last 7 days. Those sit at the end of the file. Settled narrative
 lives in `strategy/playbook-archive.md`. You do not need to read it
 per cycle.
 
+**Before committing a FULL cycle (DEEP-2026-10-01):** `tail -1
+strategy/funnel.jsonl` must show this cycle's timestamp. Three FULL
+cycles in three days committed 300 screener rows and no funnel row
+(41b031e, d43503c, f3bf184). The third one placed a bet.
+
 ## Thesis
 
 I cannot out-research the market on everything. I can win where (a) the market
@@ -7140,3 +7145,42 @@ measured forecast. Evidence: RETRO-20260930-1815. Xiaomi row
 367d2b7c6fe4 (Sep 27) flagged Alibaba row a733d6439c5a (0.88) as stale.
 No Alibaba row followed, and 0.88 stood for three days until Alibaba
 resolved No.
+
+## DEEP-2026-10-01 rulings
+
+- **Funnel row, third miss.** f3bf184 (2026-10-01 04:25Z FULL, cloud)
+  appended 300 screener rows, placed bet 50d06b8745c2, and wrote no
+  funnel row. The DEEP-2026-09-30 rule sat at line ~7,090, below where a
+  default Read stops. It is now also in the reading note at the top of
+  this file. The deep retro backfilled the row from cycles.log and the
+  schedule.json reason, flagged `"backfilled_by": "DEEP-2026-10-01"` with
+  the pool counts left null. The mechanical fix is still the operator
+  CI proposal.
+- **Touch markets: any "agent better" claim lives on one side only.**
+  Settled crypto-touch + commodities-touch forecasts, split by the sign
+  of est - mid at record: agent BELOW the mid by more than 0.05, n=9,
+  dBrier -0.064 (0 of 9 touched). Within 0.05, n=34, -0.001. ABOVE by
+  more than 0.05, n=18, **+0.061**. In commodities-touch alone the
+  split is -0.087 (n=6) vs +0.142 (n=7). This window's worst rows are
+  all on the above side: gas $4.50 27fd401006d8 0.85 vs 0.59 (+0.374)
+  and 1a0bd265abba 0.94 vs 0.58 (+0.547), SPY 770 2256384bac80 0.70 vs
+  0.57 (+0.165, guessed vol), and BTC dip 82.5K c8853475ea55 0.70 vs
+  0.575 (+0.159). Touch stays `unvalidated-method`, so this changes no
+  bet. Any future proposal to validate the touch method must report the
+  two sides separately and must not cite the pooled lifetime cell (for
+  example commodities-touch -0.034), because the pooled number hides the
+  above-mid losses. The n is small (27 rows off-market). This is a
+  reporting rule, not an edge claim.
+- **Validated-feed sweep, 10-06 retirement test already decided.** The
+  test was "retire if no leg outside the Parcl set shows ask-edge >=
+  min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
+  0.04) cleared min_edge outside Parcl, so the sweep continues past
+  10-06. Being at the floor exactly, it is one marginal leg, so the
+  10-06 deep retro should still say whether the sweep produced anything
+  beyond it. Parcl's October set was not listed on gamma at 00:25Z. If it
+  appears, the zero-crossing rule and the $10 family cap apply as
+  written.
+- **BanRep Sep ladder, tails over-weighted (RETRO-20260930-2215).** 3 of
+  4 legs lost to the market, with mass on hold and 50+bp and too little
+  on the modal 25bp. That is one event. No rule; record it and look for
+  a second central-bank ladder with the same shape before acting.
