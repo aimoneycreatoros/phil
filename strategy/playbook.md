@@ -5492,6 +5492,23 @@ recorded number does not sit on the other side of the mid because of a
 single scrape of unknown freshness - centre on the mid and record
 `market-agrees`.
 
+**Sub-$20k tennis, brand-new ATP markets with a clean book feed (2026-10-01
+11:xxZ, watch-triggered).** Three Japan Open main-draw matches fired on
+`new_market` within minutes of listing (liq $9.4-11.0k, 0-17min old):
+Munar/Faria, Jacquet/Darderi, Vacherot/Tsitsipas. Unlike the Saint Tropez
+instance above, `the-odds-api` had dense multi-book coverage for all three
+(4-6 books each) — so this is really a liquidity retest of the already-ruled-in
+$40-79k tennis-moneyline category (DEEP-2026-08-14/17), at a new-and-thin
+liquidity point instead. Power-devig (book median) vs PM ask: Munar/Faria
+edges -0.012/-0.008, Jacquet/Darderi -0.006/-0.004, Vacherot/Tsitsipas
+-0.017/+0.007 — every side under the 0.04 floor, spreads a uniform 0.02.
+**Result: the no-edge pattern holds even on markets minutes old at $9-11k
+liquidity, the lowest-liquidity clean-book-feed tennis sample yet (n=4
+combined with the Saint Tropez single).** The thin-and-new combination does
+not by itself create a mispricing when a devig benchmark is reachable;
+freshness alone was never the mechanism. 3 forecasts recorded
+(dab85fd0b140, b06f0410b778, 945d0cb7dba9), 0 bets.
+
 **Exploration budget, commodity touch-anytime brackets (2026-08-18 07:23Z,
 first test of this category).** WTI/Gold "hit HIGH/LOW $X by Sep 1" markets
 (8 legs: WTI HIGH 90/95/100, WTI LOW 70/75, Gold HIGH 4500/4600/4700) — same
