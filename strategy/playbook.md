@@ -7254,3 +7254,17 @@ resolved No.
   4 legs lost to the market, with mass on hold and 50+bp and too little
   on the modal 25bp. That is one event. No rule; record it and look for
   a second central-bank ladder with the same shape before acting.
+- **USGS daily-max ladder, in-progress Poisson: first settled event
+  (RETRO-20261001-2015).** Sep 30 ladder (c7cceb5a2381, 603ce1291e65,
+  e879bdcdfa8c, 1150efff6222): observed max 5.6 with 3.7h left, 365d
+  USGS exceedance rates -> 0.88/0.045/0.033/0.04; max held at 5.5-5.6.
+  4/4 legs beat the mid, -0.0242 combined. Edges were 0.02-0.03, under
+  min_edge, correctly skipped. One event: keep using the method for
+  forecasts; no betting change until a second settled ladder agrees.
+- **Empty-book forecast rows are excluded from edge claims
+  (RETRO-20261001-2015).** Yen intervention cbcbeb568399 scored -0.131
+  vs a 0.375 "mid" that was bid 0.01 / ask 0.74 on $11 liquidity. That
+  dBrier measures a junk mid, not calibration. When recording a forecast
+  whose spread is >= 0.5, say "empty book" in the note; retros and deep
+  retros drop such rows from any category or edge-class "agent beats
+  market" claim (report them separately if at all).
