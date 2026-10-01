@@ -6271,6 +6271,15 @@ context), and decide then whether tight-single-line + imported-sigma
 belongs in the same tally as multi-line + fitted-sigma, or needs its own
 bar.
 
+**TALLY 2026-10-01 04:1xZ (RETRO-20261001-0415): fitted-sigma games 2/6,
+bar NOT met.** Game 2 BOS@NYY (2-pt fit on 6.5/7.0 books, mu 6.72 sigma
+3.67, PM lines 5.5/7.5 within 1 run of the fit): avg leg dBrier +0.0071,
+~hit (model within a tick of the mid, Over landed). Imported-sigma side
+tally kept separate: CWS@HOU (RETRO-20261001-0015) +0.0196 avg, model-low.
+Running read: near-line reads reproduce PM (no claimable edge), far-line
+reads (SD@COL) lose to PM. Still forecast-only; nothing yet argues for an
+edge class here.
+
 ## Mech second opinions: request sequencing and what the pair showed (2026-09-07 08:0xZ)
 
 Two settled instances now show the same off-chain failure shape:
