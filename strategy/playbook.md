@@ -7236,6 +7236,11 @@ resolved No.
   Tally update RETRO-20261001-0815: +1 below-mid row (STRC cc3d96bd803f
   -0.0191) and +8 within-0.05 rows (WTI Sep ladder, sum -0.0161). Now
   below n=10, within n=42, above n=18 (unchanged). Same direction.
+  Tally update RETRO-20261001-1815: +1 within-0.05 row (BTC 85K Oct1
+  781d15889c87, own 0.35 shaded from touch.py 0.43, mid 0.325, touched,
+  -0.0331). Now below n=10, within n=43, above n=18. When shading a touch
+  estimate toward the mid, put the unshaded touch.py value in the note so
+  shaded-vs-raw can be graded.
 - **Validated-feed sweep, 10-06 retirement test already decided.** The
   test was "retire if no leg outside the Parcl set shows ask-edge >=
   min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
