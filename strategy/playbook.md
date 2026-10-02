@@ -4754,6 +4754,34 @@ restarted but no qualifying official statement; no second Millennium
 claim) - the veto kept both off the ledger. The two No-side wins are
 near-certain-No rows with thin payoff.
 
+**2026-10-02 15:3xZ update (LIGHT tick, cloud; Tesla Q3 2026 deliveries
+bracket family settled, 3 `outside-view-veto` rows, see
+RETRO-20261002-1532.)** Actual deliveries landed in the 475-500k bracket.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Tesla Q3 475-500k, pre-consensus-update (`a3ef8fda3cc9`) | 0.53 / 0.41 | No | +0.120 | Yes | -5.00 |
+| Tesla Q3 475-500k, post-consensus-update (`e55366022abe`) | 0.32 / 0.10 | No | +0.220 | Yes | -5.00 |
+| Tesla Q3 450-475k sibling (`94aba235a75e`) | 0.20 / 0.07 | Yes | +0.130 | No | -5.00 |
+
+Outside-view-veto net this batch: **-$15.00** (0W/3L). Mechanical ledger
+now 199 rows / 191 trades / 139 events / 80W-111L / +$119.36 / dBrier
++0.0329 / held-out +$128.46 (was 193/185/134evts/78W-107L/+$111.48/
++0.0327/+115.59 as of the 2026-10-01 06:2x entry; note the row/trade
+delta is 6/6, not 3/3 — 3 other OVV rows settled in the interim without
+being tabled by the retros that settled them, see the housekeeping note
+in RETRO-20261002-1532; `reconcile`'s running backlog is now 21 rows
+back to 2026-09-17, left for the next deep retro).
+
+Ruling: no boundary change — 0W/3L on one underlying event viewed from
+three angles (same self-built delivery-count Gaussian, re-centered once).
+The veto correctly avoided all three realizable losses: the model's
+*center* tracked the winning bracket well (both 475-500k forecasts had
+positive expected value in hindsight), but the *edge* claimed against the
+book (0.12-0.22 on a self-built Normal) was the wrong side of the market
+both times the book moved, consistent with the standing finding that this
+veto trades a few avoidable wins for avoiding correlated-loss tails.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
