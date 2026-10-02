@@ -7241,6 +7241,18 @@ resolved No.
   -0.0331). Now below n=10, within n=43, above n=18. When shading a touch
   estimate toward the mid, put the unshaded touch.py value in the note so
   shaded-vs-raw can be graded.
+  Tally update RETRO-20261002-1420: EWY191 abe6aeb75082 below-mid
+  (-0.075) touched, +0.0416 (first below-mid row to touch); EWY190
+  c26fb878d897 above-mid, -0.0533; NVDA236 d53a9e991f6b empty book
+  (spread 0.55), excluded. Now below n=11, within n=43, above n=19.
+  **Spot-through-barrier shades are notes, not estimates.** Shaded rows
+  with the raw value recorded: 4 of 5 the shade hurt (781d15889c87,
+  abe6aeb75082, c26fb878d897, d53a9e991f6b - all "premarket/spot at or
+  through the barrier, shade toward the mid for reversal"); 1 helped
+  (SPY 23a99c8fe4e8). When a measured print is already at or beyond the
+  barrier, est_prob is the raw touch.py value and the reversal view goes
+  in the note as "shade view: X", like an inferred open (2026-09-25 rule).
+  Recording rule only; touch stays forecast-only.
 - **Validated-feed sweep, 10-06 retirement test already decided.** The
   test was "retire if no leg outside the Parcl set shows ask-edge >=
   min_edge". USGS '7' bucket 9a2944acc280 (Yes @0.12, own 0.16, edge
