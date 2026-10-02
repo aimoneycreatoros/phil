@@ -3702,3 +3702,30 @@ Relaxation fork NOT MET (16th). On the mechanical ledger after
 RETRO-20260930-1615, the outside-view-veto is 176 trades, +$66.20, and
 dBrier +0.0343, so the vetoed estimates are still worse than the
 market on Brier. I did not recompute fold pnl.
+
+## DEEP-2026-10-02 - deep-retro proposals and status
+
+- **Hourly proposals this window:** none filed since DEEP-2026-10-01.
+- **Funnel-weld CI check:** the agent-side rule held on 4/4 FULLs today
+  (08:25Z, 14:40Z, 20:15Z, 02:15Z), after 3 misses in the 3 days
+  before. Status: PROPOSED (priority lowered; still worth having as a
+  backstop).
+- **NEW (operator, routine cadence, informational):** the cloud routine
+  fires about every 2h with a few minutes of jitter, not hourly as
+  CLAUDE.md says. That jitter turned 4 intended FULLs into LIGHTs in
+  24h. The agent-side fix is in schedule.json, but if the hourly
+  cadence is intended, the trigger may be throttled. Status:
+  INFORMATIONAL.
+- Carried unchanged: counterfactual.py `reconcile` repoint/retire,
+  refusal-row dBrier column, ODDS_API_KEY on both runners, screener
+  quota vs two runners, per-fold dBrier column, real-twin
+  allowed-classes, settled_ts determinism, wire-nonce 401, EOA gas
+  top-up, mech delivery-size, lease writability (every cloud LIGHT tick
+  today logged "push refused, proceeding unprotected"), screener quota
+  refund, watch.py shape regexes, subclass auto-tagger, core/screen.py
+  data-source escalation slot.
+
+**Status:** 1 bet settled (Peterbilt 'Manufacturing' Yes WON +$1.10),
+0 placed, 2 open. No reverts. Pacing tolerance rule added and 13
+settled watch items archived. Relaxation fork NOT MET (17th; OVV
+bucket dBrier +0.042 at n=157).

@@ -7268,3 +7268,39 @@ resolved No.
   whose spread is >= 0.5, say "empty book" in the note; retros and deep
   retros drop such rows from any category or edge-class "agent beats
   market" claim (report them separately if at all).
+
+## DEEP-2026-10-02 rulings
+
+- **Pacing jitter, not avoidance.** 4 intended FULLs became LIGHT in 24h
+  because next_full_cycle_after was set to exactly :15/:30 and the tick
+  arrived 3-7 min early (06:23Z, 12:26Z, 00:12Z, 04:11Z). FULLs fell to
+  about 6h apart, 4 per 24h, while the cloud runner left 75 of 150
+  screener batches unspent on 2026-10-01. The fix is in schedule.json
+  `screener_budget`: set the next FULL to the previous FULL tick's start
+  time + 1h45m.
+- **Watch items for settled events move to strategy/watch-archive.jsonl.**
+  schedule.json was 70KB and is read on every tick. 13 items whose
+  referenced ids had all settled were archived (it is now 46KB). Rule is
+  in `watch_items_comment`.
+- **Consensus-centred econ ladders: the tails are too fat, 2 events.**
+  BanRep Sep (DEEP-2026-10-01: 3 of 4 legs lost to a modal 25bp book) and
+  ISM Mfg Sep (86611533be34 and siblings, N(55.0, sd 1.3) vs a book with
+  54.x+55.x at ~0.76 against the model's 0.56; net +0.130 dBrier over 5
+  rows, RETRO-20261001-1615). In both, the book's modal concentration
+  beat a sd chosen by convention. Two events is **insufficient data** to
+  ban anything. Pre-registered: (1) from now on, a ladder note states
+  where its sd came from (a historical consensus-miss series for that
+  release, with source, or "convention"). (2) If a third
+  consensus-centred ladder loses to the book's modal pair while using a
+  conventional sd, tail-leg BETS (legs outside the book's top two
+  brackets) on such ladders become forecast-only until a sourced-sd
+  ladder settles agent-closer. CPI/PPI single-threshold rows (the
+  validated mechanical-econ family) are not affected.
+- **Say-the-word Yes-side base-rate gate: 1W/0L.** Peterbilt
+  'Manufacturing' 50d06b8745c2 won (+$1.10). n=1, no change. The
+  lifetime 0W/4L Yes-side record still predates the gate.
+- **Outside-view-veto held where it mattered.** Saint-Martin 76946f6b4f07
+  (own 0.38 from one H2H vs a deep book at 0.775; Saint-Martin won,
+  dBrier +0.334) was the day's worst forecast, and the veto kept the
+  No-side trade off the ledger. On the lifetime score.py dedup the OVV
+  bucket is n=157, dBrier +0.042, so the veto stays.
